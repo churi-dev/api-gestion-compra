@@ -10,4 +10,8 @@ public class ProductoMapper {
     public ProductDTO productoToProductDTO(Producto producto) {
         return new ProductDTO(producto.getIdProducto(), producto.getNombre(), producto.getCodigoBarra(), producto.getPrecioVenta(), producto.getCantidadStock(), producto.getEstado(), producto.getIdCategoria(), producto.getCategoria());
     }
+
+    public Producto productDTOtoProducto(ProductDTO productDTO) {
+        return new Producto(productDTO.getNombre(), productDTO.getCodigoBarra(), productDTO.getPrecioVenta(), productDTO.getCantidadStock(), productDTO.getEstado(), productDTO.getIdCategoria());
+    }
 }

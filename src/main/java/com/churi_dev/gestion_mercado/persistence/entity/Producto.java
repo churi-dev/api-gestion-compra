@@ -14,6 +14,7 @@ public class Producto {
     private Double precioVenta;
     private int cantidadStock;
     private Boolean estado;
+    @Column(name = "id_categoria")
     private Integer idCategoria;
 
     @ManyToOne
@@ -21,6 +22,15 @@ public class Producto {
     private Categoria categoria;
 
     public Producto() {}
+
+    public Producto(String nombre, String codigoBarra, Double precioVenta, int cantidadStock, Boolean estado, Integer idCategoria) {
+        this.nombre = nombre;
+        this.codigoBarra = codigoBarra;
+        this.precioVenta = precioVenta;
+        this.cantidadStock = cantidadStock;
+        this.estado = estado;
+        this.idCategoria = idCategoria;
+    }
 
     public Integer getIdProducto() {
         return idProducto;

@@ -20,9 +20,9 @@ public class ProductDTO {
         this.cantidadStock = cantidadStock;
         this.idCategoria = idCategoria;
         this.estado = estado;
-
         this.categoria = categoria;
     }
+
 
     public Integer getIdProducto() {
         return idProducto;
