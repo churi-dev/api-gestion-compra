@@ -1,30 +1,16 @@
-package com.churi_dev.gestion_mercado.persistence.entity;
-
-import jakarta.persistence.*;
+package com.churi_dev.gestion_mercado.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
-@Table(name = "compras")
-public class Compra {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CompraDTO {
     private Integer idCompra;
     private LocalDateTime fecha;
     private Character medioPago;
     private String comentario;
     private Boolean estado;
-    @Column(name = "id_cliente")
     private Integer idCliente;
-
-    @ManyToOne
-    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
-    private Cliente cliente;
-
-    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
-    private List<ComprasDetalle> comprasDetalle;
+    private List<CompraItem> items;
 
     public Integer getIdCompra() {
         return idCompra;
@@ -74,19 +60,11 @@ public class Compra {
         this.idCliente = idCliente;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public List<CompraItem> getItems() {
+        return items;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public List<ComprasDetalle> getComprasDetalle() {
-        return comprasDetalle;
-    }
-
-    public void setComprasDetalle(List<ComprasDetalle> comprasDetalle) {
-        this.comprasDetalle = comprasDetalle;
+    public void setItems(List<CompraItem> items) {
+        this.items = items;
     }
 }

@@ -1,4 +1,4 @@
-package com.churi_dev.gestion_mercado.web;
+package com.churi_dev.gestion_mercado.web.controller;
 
 import com.churi_dev.gestion_mercado.domain.ProductDTO;
 import com.churi_dev.gestion_mercado.domain.service.ProductoService;
